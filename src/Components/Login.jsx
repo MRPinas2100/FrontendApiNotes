@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../index.css";
 import loginServices from "../Services/loginCurrentUser";
 
@@ -6,6 +7,7 @@ function Login() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [currentUser, setCurrentUser] = useState(null);
+  let navigate = useNavigate();
 
   const handleChange = (event) => {
     switch (event.target.name) {
@@ -27,11 +29,13 @@ function Login() {
         username,
         passwordHash: password,
       });
-      setCurrentUser(user);
+      if (user.token) {
+        navigate("/notes", { replace: true });
+      }
       setUserName("");
       setPassword("");
     } catch (error) {
-      console.log(error);
+      alert("You're not Authorized");
     }
   };
 

@@ -95,3 +95,9 @@
     transition: background-color .5s;
     cursor: pointer;
 }
+
+/* Estilo del componentes Notes */
+
+.container-notes{
+  transition: ease .5s;
+}
