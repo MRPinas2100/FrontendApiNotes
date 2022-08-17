@@ -30,7 +30,7 @@ function Login() {
         passwordHash: password,
       });
       if (user.token) {
-        navigate("/notes", { replace: true });
+        navigate("/notes", { state: { user } }, { replace: true });
       }
       setUserName("");
       setPassword("");

@@ -16,6 +16,7 @@ function Header() {
           <Link to="/contact" element={<Contact />}>
             Contact
           </Link>
+          <button>Log Out</button>
         </nav>
       </header>
     </div>
