@@ -1,9 +1,10 @@
 import "./index.css";
-import Login from "./Components/Login";
+import Login from "./Pages/Login";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Notes from "./Pages/Notes";
-import { Route, Routes, Link } from "react-router-dom";
+import NewNote from "./Pages/NewNote";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/notes" element={<Notes />} />
+        <Route path="/create" element={<NewNote />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
