@@ -31,6 +31,7 @@ function CardNotes({ note }) {
   const handleClickDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:3001/deleteNote/${id}`);
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }

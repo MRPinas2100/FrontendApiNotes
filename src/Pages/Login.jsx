@@ -4,8 +4,8 @@ import "../index.css";
 import loginServices from "../Services/loginCurrentUser";
 
 function Login() {
-  const [username, setUserName] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUserName] = useState("Felipe117");
+  const [password, setPassword] = useState("987654321");
   let navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -29,7 +29,11 @@ function Login() {
         passwordHash: password,
       });
       if (user.token) {
-        navigate("/notes", { state: { user } }, { replace: true });
+        window.localStorage.setItem(
+          "userLogged",
+          JSON.stringify(user)
+        );
+        navigate("/notes", { replace: true });
       }
       setUserName("");
       setPassword("");

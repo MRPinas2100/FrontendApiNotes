@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Header from "../Components/Header";
 
 function NewNote() {
   return (
-    <div>NewNote</div>
-  )
+    <div className="container">
+      <Header />
+
+    </div>
+  );
 }
 
-export default NewNote
+export default NewNote;

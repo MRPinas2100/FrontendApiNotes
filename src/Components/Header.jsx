@@ -4,6 +4,7 @@ import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import NewNote from "../Pages/NewNote";
 import { Link } from "react-router-dom";
+import Notes from "../Pages/Notes";
 
 function Header() {
   return (
@@ -13,6 +14,9 @@ function Header() {
           <h1 className="titulo-api">API Notes</h1>
         </div>
         <nav className="btn-box">
+          <Link to="/notes" element={<Notes />}>
+            Home
+          </Link>
           <Link to="/create" element={<NewNote />}>
             New Note
           </Link>

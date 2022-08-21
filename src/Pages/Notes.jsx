@@ -6,20 +6,24 @@ import userNotes from "../Services/getNotes";
 
 function Notes() {
   const [userPersonalNotes, setUserPersonalNotes] = useState([]);
-  const location = useLocation();
+
   useEffect(() => {
     getUserNotes();
-  }, [userPersonalNotes]);
+  }, []);
+
   const getUserNotes = async () => {
     try {
-      const allUserNotes = await userNotes.getNotes(location.state.user.id);
+      const userLogged = window.localStorage.getItem("userLogged");
+      const currentUser = JSON.parse(userLogged);
+      const allUserNotes = await userNotes.getNotes(currentUser.id);
       setUserPersonalNotes(allUserNotes.notes);
     } catch (error) {
       console.log(error);
     }
   };
+
   return (
-    <div className="container-notes">
+    <div className="container">
       <Header />
       <section className="loop-notes">
         {userPersonalNotes.map((note) => (
