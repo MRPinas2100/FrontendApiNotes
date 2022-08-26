@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import CardNotes from "../Components/CardNotes";
 import Header from "../Components/Header";
 import userNotes from "../Services/getNotes";

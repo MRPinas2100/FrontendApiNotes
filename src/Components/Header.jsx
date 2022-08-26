@@ -3,10 +3,17 @@ import "../index.css";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import NewNote from "../Pages/NewNote";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Notes from "../Pages/Notes";
 
 function Header() {
+  let navigate = useNavigate();
+
+  const logOut = () => {
+    window.localStorage.removeItem("userLogged");
+    navigate("/", { replace: true });
+  };
+
   return (
     <div>
       <header className="header-notes">
@@ -26,7 +33,7 @@ function Header() {
           <Link to="/contact" element={<Contact />}>
             Contact
           </Link>
-          <button>Log Out</button>
+          <button onClick={logOut}>Log Out</button>
         </nav>
       </header>
     </div>

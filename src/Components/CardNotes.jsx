@@ -45,7 +45,6 @@ function CardNotes({ note }) {
       <div className="body-card">
         <span>{currentNote.date.slice(0, -14)}</span>
         <div>{currentNote.content}</div>
-        <div>{currentNote.important === true ? "Si" : "No"}</div>
         <div className="btn-card-box">
           <button className="btn" onClick={handleClickComplete}>
             C
