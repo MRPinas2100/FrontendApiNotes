@@ -26,7 +26,7 @@ function CardNotes({ note }) {
     }
   };
   const handleClickEdit = () => {
-    console.log("new page");
+    console.log(note);
   };
   const handleClickDelete = async (id) => {
     try {

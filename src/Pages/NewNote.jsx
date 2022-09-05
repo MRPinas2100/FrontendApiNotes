@@ -1,6 +1,5 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../Components/Header";
 import createNote from "../Services/createNewNote";
 
@@ -9,8 +8,8 @@ function NewNote() {
     content: "",
     important: false,
   });
-
   const [token, setToken] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const localStorageUser = window.localStorage.getItem("userLogged");
@@ -36,6 +35,7 @@ function NewNote() {
       content: "",
       important: false,
     });
+    navigate("/notes", { replace: true });
   };
 
   return (
